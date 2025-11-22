@@ -1,16 +1,59 @@
-# React + Vite
+Tic-Tac-Toe Master (Hybrid AI Powered) 🎮
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, scalable, and unbeatable Tic-Tac-Toe web application built with React, Tailwind CSS, and Vite.
 
-Currently, two official plugins are available:
+This project goes beyond standard implementations by featuring a Hybrid AI Engine that switches strategies based on board complexity: it uses the mathematical Minimax Algorithm for unbeatable 3x3 gameplay and Google's Gemini AI for intuitive play on larger grids (4x4 to 6x6).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+(Add a screenshot of your game here)
 
-## React Compiler
+🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Dynamic Grid System: Supports any grid size from 3x3 up to 6x6.
 
-## Expanding the ESLint configuration
+Hybrid AI Architecture:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3x3 Grids: Uses a local Minimax Algorithm (0ms latency, mathematically unbeatable).
+
+4x4+ Grids: Offloads logic to Google Gemini API for strategic pattern recognition without browser lag.
+
+Game Modes:
+
+👤 PvP: Human vs. Human (Hotseat).
+
+🤖 PvAI: Human vs. The Terminator Bot.
+
+Responsive UI: Fully adaptive design using Tailwind CSS.
+
+Smart Feedback: Dynamic victory/defeat screens depending on who won (Trophy for you, Skull for the bot).
+
+🛠️ Tech Stack
+
+Frontend: React.js (Vite)
+
+Styling: Tailwind CSS
+
+Icons: Lucide React
+
+AI Integration: Google Gemini API (via REST)
+
+Algorithm: Minimax (Recursive Backtracking)
+
+🧠 How the AI Works
+
+This project implements a Strategy Pattern to handle AI moves efficiently:
+
+Strategy A: The Minimax Algorithm (3x3)
+
+For standard boards, the game runs a recursive algorithm that simulates every possible future move to find the optimal path.
+
+Pros: Impossible to beat. Instant execution.
+
+Cons: Computationally expensive ($O(b^d)$) for larger boards.
+
+Strategy B: Large Language Model (4x4+)
+
+For larger grids (where Minimax would freeze the browser), the game sends a serialized representation of the board to the Gemini Flash model.
+
+Prompt Engineering: The AI is prompted to analyze the grid as a 1D array and return the single best integer index to block or win.
+
+Pros: Handles complex patterns "intuitively." Fast response times for large state spaces.
