@@ -4,7 +4,8 @@ A modern, scalable, and unbeatable Tic-Tac-Toe web application built with React,
 
 This project goes beyond standard implementations by featuring a Hybrid AI Engine that switches strategies based on board complexity: it uses the mathematical Minimax Algorithm for unbeatable 3x3 gameplay and Google's Gemini AI for intuitive play on larger grids (4x4 to 6x6).
 
-(Add a screenshot of your game here)
+![minmax](https://github.com/user-attachments/assets/197c04b9-0b28-48d9-b517-4384f63e158e)
+
 
 🚀 Key Features
 
